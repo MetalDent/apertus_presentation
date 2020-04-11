@@ -1,0 +1,28 @@
+% --- Title Page ---
+\makeatletter
+\setbeamertemplate{title page}
+{
+   \vbox{}
+   \vfill
+   \begin{centering}
+       \vskip0.25em%
+     \begin{beamercolorbox}[sep=8pt,center]{title}
+       \usebeamerfont{title}\inserttitle\par%
+     \end{beamercolorbox}%
+    \vskip0.25em%
+     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+     \vskip1em\par
+     
+     \begin{beamercolorbox}[sep=8pt,center]{author}
+       \usebeamerfont{author}\insertauthor
+     \end{beamercolorbox}
+      \vspace{-10pt}
+     
+     \begin{beamercolorbox}[sep=8pt,center]{date}
+       \usebeamerfont{date}\insertdate
+     \end{beamercolorbox}
+     \vskip0.5em
+   \end{centering}
+   \vfill
+}
+\makeatother
