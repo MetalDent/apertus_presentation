@@ -1,0 +1,27 @@
+﻿AXIOM Remote:
+A universal remote control with buttons, dials and an LCD for menu/settings. It features push-buttons and switches as well as a rotary encoder (also with push-button function) that will  be used to control a wide range of camera parameters like shutter speed, gain, overlays, FPS, gamma curves etc.
+AXIOM Remote hardware  which has a hardware prototype finished based on a PIC32 CPU and 320x240 pixel LCD. The software runs "bare metal" and there is no graphics acceleration meaning each pixel is drawn "manually" in the software.
+
+
+AXIOM Remote has two PIC16s which deliver signals to PIC32MZ  about which button is pressed and direction knob is rotated  via i2c connectivity. PIC16E is for  buttons and PIC16W is for knob and LCD to display remote.
+On update of PollKMW and Pollbutton framebuffer is cleared and filled with respective content and displayed in visualizer and LCD.
+Visualiser is written in SDL and opengl (which is used by imgui). 
+
+
+
+
+top side:
+- Adafruit 2.8" TFT with 320x240 pixel resolution LCD connected through CDC 
+- 2 encoder button
+- Ports:UART i2c JTAG icsp.
+- 2 rotary knobs , presently 1 in use
+- 12 buttons to handle remote
+- RGB at present used for testing but in future will give status of remote.
+
+
+bottom side:
+-  PIC32MZ central processor.
+-  2 PIC16 which are connected to PIC32Mz through i2c connection
+-  Top center USB port for connecting to beta and CDC class will be use to exchange data.
+-  right lower power connection supply 5V
+-
