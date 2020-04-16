@@ -8,7 +8,7 @@ axiom_presentation.pdf:
 	pdflatex axiom_presentation.tex
 
 clean:
-	rm -r beamer* axiom_presentation.pdf
+	rm -r beamer* axiom_presentation.pdf axiom_presentation.aux axiom_presentation.log axiom_presentation.nav axiom_presentation.out axiom_presentation.snm axiom_presentation.toc
 
 
 			
