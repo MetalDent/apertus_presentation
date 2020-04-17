@@ -1,0 +1,51 @@
+Intro:
+- AXIOM remote is the remote control for the AXIOM Beta
+- It has different buttons, rotor, LCD for the menus and options
+- The hardware includes one PIC32MZ, two PIC16s and one LCD display
+- The software runs "bare metal" i.e. it has minimal bootloader for processor, clock and memory and the firmware directly runs on the hardware
+- Also there is no graphics acceleration so each pixel is drawn manually in the software
+
+General Concepts:
+- This picture shows the position of all the parts, the crossed things are not planned anymore
+- It has a record button (REC), green buttons to select the options on the screen, there is on/off switch and one rotary knob with 12 indents and a lock/unlock slider switch
+- Three types of illumination: white LED (REC button & circle buttons), RGB status LED (two on the left side near the rotor) and RGB LED (six rectangular buttons)
+
+Operation:
+- In the old design:
+	- Previous or next page can be accessed by pressing the left/right buttons
+	- The page number button is used to change the page
+	- There are two variats:
+		- First one has 4 preset values + the menu and the bottom right can be configured to save any additional option using the "edit" button on the left
+		- Second one doesn't allow editing option
+	- "Help" button: to know more about any label/button
+
+- In the new design, right now only "home" and "back" buttons are available, others will be configured soon
+
+Hardware:
+- PCB Version 0.9
+	- It uses PIC32MZ, ICSP, JTAG
+	- (will add more later)
+- PCB Version 2 prototype
+	- 2nd knob is removed to simply the UI
+	- Removed left side rocker switches as they are prone to accidently switched as they protrude out from the surface
+	- Topside push buttons are removed too for good UI practice
+	- One LED per push button is planned to show which button is active 
+	- 4 more holes can be added to PCB so that the back can be firmly screwed together with the front
+	- The slide switches for ON/OFF and LOCK can be replaced with pushbuttons
+
+Electronic Components:
+- PIC32MZ is chosen as the core processor, two small PIC16s are used for handling push button, rotor and the LED I/O operations
+- 2.8" 320x240 TFT from Adafruit is used as the display
+- USB-C connector is used 
+- To detect the device orientation 3D accelerometer was planned but the remote is only to be used with one orientation so not needed
+- The remote is currently powered by externally via 5V DC supply, later internal batteries can be used
+- Currently the firmware is programmed with PICkit2 directly into the flash memory, later this can be done via USB (separate SD cards shall be used) 
+
+Connectivity:
+- A USB extension cable is plugged into USB connector but that can use more space so in the future USB-C or USB Mini B can be used
+
+Extension Port:
+- This allows additional devices to be connected to the remote, the purpose is to provide power and data transfer to and from the module (page 25: right side)
+
+GUI:
+This picture shows the AXIOM Remote color scheme (explain from the pic)
