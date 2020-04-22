@@ -79,6 +79,12 @@
     \end{itemize}
 \end{frame}
 
+\subsection{Block Diagram}
+
+\begin{frame}{Block Diagram}
+    \includegraphics[width=8cm]{images/main_board_block_diagram.jpg}
+\end{frame}
+
 \subsection{Connections}
 
 \begin{frame}{CSO}
@@ -94,7 +100,8 @@
     \item Comes from power board, which in turn is from MicroZed
     \item 2x 24 LVDS pairs (High speed) as GPIOs
     \item 7x BANK-13 LVDS pairs as GPIOs
-    \item 1x BANK-13 pin as power rail, to RFW and its PIC16
+    \item 1x BANK-13 single ended pin for clock synchronization, to RFW and its PIC16
+    \item 1x JX1 single ended pin for clock synchronization, to RFE and its PIC16
     \item Various other control/debug pins and power rails to CSO, PCIEs, Shields etc.
     \end{itemize}
 \end{frame}
@@ -114,7 +121,7 @@
     \begin{itemize}
     \item Pin count - 20 (each)
     \item 1x I2C bus each, to each PIC16 (Zynq to PIC16 communication)
-    \item Various power rails, to X-WEST and X-EAST
+    \item Various feedback lines for power rails (unused), to X-WEST and X-EAST
     \end{itemize}
 \end{frame}
 
@@ -123,7 +130,8 @@
     \item Pin count - 28 (each)
     \item VDD from PWR-NW and PWR-SE
     \item ICSP clock and data through I2C bus, from PB-NW \& PB-SE
-    \item VPP from PB-NW \& PB-SE (supply for programming)
+    \item The same two GPIOs can be used for ICSP programming and also I2C communication
+    \item MCLRn from PB-NW \& PB-SE (enable programming)
     \item JTAG, I2C \& SPI interface pins (through IO ports), to RFW \& RFE
     \item Various control signal pins for the FPGAs
     \end{itemize}
@@ -134,7 +142,7 @@
     \item Pin count - 110 (each)
     \item JTAG, I2C \& SPI interface pins, to RFW \& RFE
     \item 18x LVDS pairs (High speed) each, to JX1 \& JX2
-    \item Various power rails from PB-NW \& PB-SE
+    \item Various feedback pins for power rails (unused) from PB-NW \& PB-SE
     \end{itemize}
 \end{frame}
 
