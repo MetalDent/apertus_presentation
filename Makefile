@@ -3,7 +3,8 @@ SRC_DIR = themes/beamercolorthemeapertus.sty themes/beamerfontthemeapertus.sty t
 
 all:
 	cp -f $(SRC_DIR) $(DEST_DIR)
-	rubber -d axiom_presentation.tex
+	rubber -d axiom_beta.tex
+	rubber -d axiom_remote.tex
 
 clean:
-	rm -rf beamer* axiom_presentation.pdf *.aux *.log *.nav *.out *.snm *.toc
+	rm -rf beamer* *.aux *.log *.nav *.out *.snm *.toc
