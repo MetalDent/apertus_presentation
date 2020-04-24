@@ -121,4 +121,15 @@ The JTAG port or Test Access Port (TAP) requires only 5 pins:
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Relationship with BSDL}
+    \begin{itemize}
+    \item Boundary Scan Description Language (BSDL) is a subset of VHDL
+    \item A BSDL file is needed for each JTAG enabled chip
+    \item Contains all implementation details, like size of registers, number of registers,
+        associated pins etc.
+    \item A JTAG Debugger software can read this file to understand how to communicate
+        with the device through JTAG
+    \end{itemize}
+\end{frame}
+
 \end{document}
