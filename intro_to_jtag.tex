@@ -121,6 +121,8 @@ The JTAG port or Test Access Port (TAP) requires only 5 pins:
     \end{itemize}
 \end{frame}
 
+\subsection{Relationship with BSDL}
+
 \begin{frame}{Relationship with BSDL}
     \begin{itemize}
     \item Boundary Scan Description Language (BSDL) is a subset of VHDL
@@ -129,6 +131,26 @@ The JTAG port or Test Access Port (TAP) requires only 5 pins:
         associated pins etc.
     \item A JTAG Debugger software can read this file to understand how to communicate
         with the device through JTAG
+    \end{itemize}
+\end{frame}
+
+\subsection{An Example}
+
+\begin{frame}{Example: EXTEST}
+    \begin{itemize}
+    \item Load instruction:
+        \begin{itemize}
+        \item TMS sequence: 11111 (Reset)
+        \item TMS sequence: 01100 \{0...0\} 110 (instruction)
+        \item While TMS in \{0...0\}, send via TDI: 000... (EXTEST)
+        \end{itemize}
+    \item Shift BSR (for EXTEST)
+        \begin{itemize}
+        \item TMS sequence: 100 \{0...0\} 111
+        \item While TMS in \{0...0\}, send via TDI: xxx... (pin states to be written)
+        \item Length of \{0...0\} = Total length of Data register (BSR, here)
+        \end{itemize}
+    \item While TMS in \{0...0\}, receive captured pin states via TDO
     \end{itemize}
 \end{frame}
 
